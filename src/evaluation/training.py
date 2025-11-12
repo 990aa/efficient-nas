@@ -4,7 +4,7 @@ import torch.optim as optim
 from torch.optim.lr_scheduler import CosineAnnealingLR
 from torch.utils.data import DataLoader
 import time
-from typing import Dict, Any, Optional, Tuple, List
+from typing import Dict, Any, List
 import numpy as np
 from ..search_space.encoding import create_model_from_genome
 
@@ -195,7 +195,6 @@ class BenchmarkTrainer:
             Evaluation results
         """
         from ..utils.data_loader import DatasetManager
-        from ..search_space.encoding import create_model_from_genome
         
         dataset_manager = DatasetManager()
         

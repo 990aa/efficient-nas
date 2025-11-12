@@ -1,8 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from typing import List, Dict, Any, Optional
-import numpy as np
+from typing import Dict, Any
 
 class ResNet20(nn.Module):
     """ResNet-20 baseline for CIFAR-10."""

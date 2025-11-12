@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np
-from typing import List, Dict, Any, Optional, Tuple
+from typing import List, Dict, Optional, Tuple
 import copy
 from ..search_space.encoding import create_model_from_genome
 from ..search_space.operations import *
@@ -352,7 +352,6 @@ class MorphismEnhancedEvolution:
         genome = parent_data['genome']
         state_dict = parent_data['state_dict']
         
-        from ..search_space.encoding import create_model_from_genome
         model = create_model_from_genome(genome)
         model.load_state_dict(state_dict)
         
@@ -362,7 +361,6 @@ class MorphismEnhancedEvolution:
                                  parent_genome: Dict,
                                  parent_model: nn.Module) -> np.ndarray:
         """Evaluate child with weight inheritance from parent."""
-        from ..search_space.encoding import create_model_from_genome
         
         # Create child model
         child_model = create_model_from_genome(child_genome)

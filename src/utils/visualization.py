@@ -1,18 +1,11 @@
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
-from mpl_toolkits.mplot3d import Axes3D
-import seaborn as sns
 import numpy as np
-import pandas as pd
-from typing import List, Dict, Any, Optional, Tuple
+from typing import List, Dict, Any, Optional
 import plotly.graph_objects as go
-import plotly.express as px
-from plotly.subplots import make_subplots
 from sklearn.manifold import TSNE, UMAP
-from sklearn.decomposition import PCA
 import networkx as nx
 from pathlib import Path
-import json
 
 class NASVisualizer:
     """Comprehensive visualization suite for Neural Architecture Search."""

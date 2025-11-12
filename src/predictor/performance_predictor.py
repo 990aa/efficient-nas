@@ -1,14 +1,11 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import torch_geometric as pyg
 from torch_geometric.data import Data, DataLoader
-from torch_geometric.nn import GCNConv, GATConv, global_mean_pool, MessagePassing
+from torch_geometric.nn import GCNConv, GATConv, global_mean_pool
 import numpy as np
-from typing import List, Dict, Any, Optional, Tuple
-import json
-from pathlib import Path
-from ..search_space.encoding import ArchitectureEncoder, create_model_from_genome
+from typing import List, Dict, Any, Tuple
+from ..search_space.encoding import ArchitectureEncoder
 
 class ArchitectureGraph:
     """Convert architecture genome to graph representation for GNN."""
@@ -508,7 +505,6 @@ class PredictorEnhancedSearch:
     def _evaluate_architecture(self, genome: Dict) -> np.ndarray:
         """Placeholder for actual architecture evaluation."""
         # This would integrate with your existing evaluation system
-        from ..evaluation.training import ArchitectureEvaluator
         # Mock implementation
         return np.array([85.0, 10.0, 1.5])  # [accuracy, latency, params]
     

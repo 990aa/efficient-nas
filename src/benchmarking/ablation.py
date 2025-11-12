@@ -1,10 +1,8 @@
 import numpy as np
-from typing import List, Dict, Any, Optional, Tuple
+from typing import List, Dict, Any, Tuple
 import scipy.stats as stats
 from scipy import spatial
 import matplotlib.pyplot as plt
-import seaborn as sns
-import pandas as pd
 from ..evolution.nsga2 import NSGA2
 from ..evaluation.zero_cost_proxies import ZeroCostProxies
 from ..search_space.encoding import ArchitectureEncoder, ConstraintAwareInitializer
@@ -93,7 +91,6 @@ class AblationStudy:
             print(f"Running proxy ablation: {config_name}")
             
             # Configure zero-cost evaluator
-            from ..evaluation.zero_cost_proxies import ZeroCostProxies
             zc_evaluator = ZeroCostProxies(self.device)
             
             if proxies:

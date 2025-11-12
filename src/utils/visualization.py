@@ -432,7 +432,6 @@ class NASVisualizer:
         import scipy.stats as stats
         
         proxy_names = list(proxy_data.keys())
-        n_proxies = len(proxy_names)
         
         # Calculate correlations
         correlations = []

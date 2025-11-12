@@ -1,6 +1,5 @@
 import numpy as np
-from typing import List, Tuple, Dict, Any, Optional
-import torch
+from typing import List, Dict, Any
 import torch.nn as nn
 
 class ArchitectureEncoder:
@@ -109,7 +108,6 @@ class ArchitectureEncoder:
     
     def mutate_genome(self, genome: Dict[str, Any], mutation_rate: float = 0.1) -> Dict[str, Any]:
         """Apply mutations to a genome."""
-        mutated = genome.copy()
         integer_genome = self.genome_to_integer(genome)
         
         # Apply random mutations

@@ -31,7 +31,7 @@ def demo_performance_predictor():
     
     # Train predictor
     predictor = PerformancePredictor(device='cpu')
-    history = predictor.train_predictor(
+    _ = predictor.train_predictor(
         training_genomes, training_accuracies, training_latencies, epochs=50)
     
     # Test prediction
@@ -145,11 +145,11 @@ def demo_integrated_advanced_search():
     """Demonstrate integrated advanced features in NAS search."""
     print("\n=== Integrated Advanced Search Demo ===")
     
-    # Initialize components
-    predictor = PerformancePredictor()
-    morphism = NetworkMorphism()
-    visualizer = NASVisualizer()
-    monitor = RealTimeMonitor()
+    # Initialize components for demonstration
+    _ = PerformancePredictor()
+    _ = NetworkMorphism()
+    _ = NASVisualizer()
+    _ = RealTimeMonitor()
     
     # In a real scenario, we would:
     # 1. Train predictor on initial architectures

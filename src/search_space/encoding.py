@@ -78,22 +78,26 @@ class ArchitectureEncoder:
         # Decode normal cell
         normal_genome = []
         for i in range(self.genes_per_cell):
-            input_node = integer_list[idx]; idx += 1
-            operation = integer_list[idx]; idx += 1
+            input_node = integer_list[idx]
+            idx += 1
+            operation = integer_list[idx]
+            idx += 1
             normal_genome.append((input_node, operation, 1))  # Default weight
         
         # Decode reduction cell
         reduce_genome = []
         for i in range(self.genes_per_cell):
-            input_node = integer_list[idx]; idx += 1
-            operation = integer_list[idx]; idx += 1
+            input_node = integer_list[idx]
+            idx += 1
+            operation = integer_list[idx]
+            idx += 1
             reduce_genome.append((input_node, operation, 1))
             
         # Decode hyperparameters
         hyperparams = {
-            'num_cells': integer_list[idx]; idx += 1,
-            'init_channels': integer_list[idx]; idx += 1,
-            'channel_multiplier': integer_list[idx] / 10.0,  # Scale back
+            'num_cells': integer_list[idx],
+            'init_channels': integer_list[idx + 1],
+            'channel_multiplier': integer_list[idx + 2] / 10.0,  # Scale back
             'steps': self.steps
         }
         

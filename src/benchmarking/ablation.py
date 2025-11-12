@@ -3,6 +3,7 @@ from typing import List, Dict, Any, Tuple
 import scipy.stats as stats
 from scipy import spatial
 import matplotlib.pyplot as plt
+import torch
 from ..evolution.nsga2 import NSGA2
 from ..evaluation.zero_cost_proxies import ZeroCostProxies
 from ..search_space.encoding import ArchitectureEncoder, ConstraintAwareInitializer

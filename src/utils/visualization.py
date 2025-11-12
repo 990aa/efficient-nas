@@ -80,7 +80,7 @@ class NASVisualizer:
                     for simplex in hull.simplices:
                         ax.plot(points[simplex, 0], points[simplex, 1], points[simplex, 2],
                                'r-', alpha=0.5)
-                except:
+                except Exception:
                     pass  # Skip if convex hull fails
             
             ax.set_xlabel('Latency (ms)')

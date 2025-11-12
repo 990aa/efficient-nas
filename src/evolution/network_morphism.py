@@ -5,7 +5,7 @@ import numpy as np
 from typing import List, Dict, Optional, Tuple
 import copy
 from ..search_space.encoding import create_model_from_genome
-from ..search_space.operations import *
+from ..search_space.operations import *  # noqa: F403
 
 class NetworkMorphism:
     """Weight inheritance through network morphism for faster evaluation."""

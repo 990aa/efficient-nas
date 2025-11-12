@@ -1,3 +1,4 @@
+import time
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -134,7 +135,7 @@ class ZeroCostProxies:
                 eigenvalues = torch.linalg.eigvalsh(kernel_matrix)
                 eigenvalues = eigenvalues[eigenvalues > 1e-8]  # Remove near-zero eigenvalues
                 log_det = torch.sum(torch.log(eigenvalues)).item()
-            except:
+            except Exception:
                 # Fallback to trace for unstable matrices
                 log_det = torch.trace(kernel_matrix).item()
         
@@ -192,7 +193,7 @@ class ZeroCostProxies:
                 eigenvalues = torch.linalg.eigvalsh(cov_matrix)
                 eigenvalues = eigenvalues[eigenvalues > 1e-8]
                 zen_score = torch.sum(torch.log(eigenvalues)).item()
-            except:
+            except Exception:
                 zen_score = torch.trace(cov_matrix).item()
         
         return zen_score

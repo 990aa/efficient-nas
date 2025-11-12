@@ -124,14 +124,12 @@ class GeneticOperators:
         for i in range(len(mutated['normal_cell'])):
             if np.random.random() < 0.2 * mutation_rate:
                 # Mutate operation
-                current_op = mutated['normal_cell'][i][1]
                 new_op = np.random.randint(0, self.encoder.num_ops)
                 mutated['normal_cell'][i] = (mutated['normal_cell'][i][0], new_op, 1)
         
         for i in range(len(mutated['reduction_cell'])):
             if np.random.random() < 0.2 * mutation_rate:
                 # Mutate operation
-                current_op = mutated['reduction_cell'][i][1]
                 new_op = np.random.randint(0, self.encoder.num_ops)
                 mutated['reduction_cell'][i] = (mutated['reduction_cell'][i][0], new_op, 1)
         

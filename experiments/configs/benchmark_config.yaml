@@ -1,0 +1,56 @@
+# experiments/configs/benchmark_config.yaml
+experiment:
+  name: "efficient_nas_benchmark"
+  version: "1.0"
+  description: "Comprehensive benchmarking of Efficient NAS"
+
+datasets:
+  primary: "cifar10"
+  transfer: "cifar100" 
+  efficiency: "imagenet16-120"
+  domain_specific: "fashion-mnist"
+
+training:
+  search_phase:
+    epochs: 20
+    optimizer: "SGD"
+    learning_rate: 0.025
+    momentum: 0.9
+    weight_decay: 5e-4
+    batch_size: 96
+    scheduler: "cosine"
+  
+  final_evaluation:
+    epochs: 200
+    optimizer: "SGD"
+    learning_rate: 0.025
+    momentum: 0.9
+    weight_decay: 5e-4
+    batch_size: 96
+    cutout: true
+    seeds: [42, 123, 456]
+
+evolution:
+  population_size: 50
+  generations: 60
+  crossover_rate: 0.9
+  mutation_rate: 0.3
+  objectives: ["accuracy", "latency", "params"]
+
+baselines:
+  hand_designed: ["resnet20", "mobilenetv2", "shufflenet"]
+  nas_methods: ["darts", "enas", "random_search"]
+  hardware_aware: ["proxylessnas", "fbnet"]
+  evolutionary: ["nsganetv2", "lemonade"]
+
+ablation_studies:
+  search_strategy: true
+  proxy_ablation: true  
+  search_space: true
+  population_dynamics: true
+  hardware_config: true
+
+hardware:
+  device: "cpu"
+  mixed_precision: false
+  batch_inference: true

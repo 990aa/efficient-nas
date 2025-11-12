@@ -80,22 +80,6 @@ class Cell(nn.Module):
         # Concatenate all intermediate node outputs
         return torch.cat(states[-self.multiplier:], dim=1)
 
-class ReLUConvBN(nn.Module):
-    """Basic block: ReLU -> Conv -> BN."""
-    
-    def __init__(self, in_channels: int, out_channels: int, 
-                 kernel_size: int, stride: int, padding: int):
-        super().__init__()
-        self.op = nn.Sequential(
-            nn.ReLU(inplace=False),
-            nn.Conv2d(in_channels, out_channels, kernel_size, 
-                     stride=stride, padding=padding, bias=False),
-            nn.BatchNorm2d(out_channels)
-        )
-        
-    def forward(self, x: torch.Tensor) -> torch.Tensor:
-        return self.op(x)
-
 class Network(nn.Module):
     """Complete neural network composed of multiple cells."""
     

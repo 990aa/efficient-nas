@@ -5,3 +5,6 @@ description = "CPU-efficient NAS system using genetic algorithms, bayesian optim
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = []
+
+[tool.uv.pip]
+extra-index-url = "https://download.pytorch.org/whl/cpu"

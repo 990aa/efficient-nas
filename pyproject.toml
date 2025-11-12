@@ -1,7 +1,7 @@
 [project]
 name = "efficient-nas"
 version = "0.1.0"
-description = "Add your description here"
+description = "CPU-efficient NAS system using genetic algorithms, bayesian optimization for optimal architectures for specific tasks. Multi-objective optimization balancing accuracy, latency, and model size."
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.14"
 dependencies = []

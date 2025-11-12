@@ -26,9 +26,6 @@ class ArchitectureGraph:
         normal_cell = genome['normal_cell']
         hyperparams = genome['hyperparams']
         
-        # Calculate number of nodes: input1, input2 + intermediate nodes
-        num_nodes = 2 + self.steps  # Two inputs + intermediate nodes
-        
         # Node features: [operation_type, node_type, channels]
         node_features = []
         
@@ -229,7 +226,6 @@ class PerformancePredictor:
         print("Converting architectures to graphs...")
         
         graphs = []
-        targets = []
         
         for genome, acc, lat in zip(genomes, accuracies, latencies):
             graph = self.graph_converter.genome_to_graph(genome)

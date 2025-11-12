@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 from typing import List, Tuple
-from .operations import OPS
+from .operations import OPS, FactorizedReduce, ReLUConvBN
 
 class Cell(nn.Module):
     """A single cell in the neural architecture."""

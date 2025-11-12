@@ -3,8 +3,23 @@ name = "efficient-nas"
 version = "0.1.0"
 description = "CPU-efficient NAS system using genetic algorithms, bayesian optimization for optimal architectures for specific tasks. Multi-objective optimization balancing accuracy, latency, and model size."
 readme = "README.md"
-requires-python = ">=3.14"
-dependencies = []
+requires-python = ">=3.11, <3.13"
+
+dependencies = [
+    "dvc>=3.63.0",
+    "numpy>=2.3.4",
+    "pymoo>=0.6.1.5",
+    "ray[tune]>=2.51.1",
+    "torch>=2.0",
+    "torchaudio>=2.9.0",
+    "torchvision>=0.24.0",
+    "wandb>=0.23.0",
+]
 
 [tool.uv.pip]
-extra-index-url = "https://download.pytorch.org/whl/cpu"
+extra-index-url = ["https://download.pytorch.org/whl/cpu"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.1",
+]
